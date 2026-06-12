@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  background-color: #F9F8F6;
+  color: #1A1A1A;
+}
+
+body {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle focus ring that doesn't clash with the palette */
+:focus-visible {
+  outline: 1px solid #1A1A1A;
+  outline-offset: 3px;
+}
+
+/* Small caps utility for artwork labels */
+.label {
+  font-family: var(--font-inter);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6B6B6B;
+}
