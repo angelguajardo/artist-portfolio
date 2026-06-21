@@ -8,7 +8,7 @@ export default function Footer() {
       </span>
       <div className="flex gap-6">
         <a
-          href="https://www.instagram.com/angelgiogu" // replace with your Instagram
+          href="https://www.instagram.com/angelgioguajardo" // replace with your Instagram
           target="_blank"
           rel="noopener noreferrer"
           className="label hover:text-ink transition-colors"

@@ -143,12 +143,12 @@ export default function ContactPage() {
           <div>
             <p className="label mb-3">Instagram</p>
             <a
-              href="https://www.instagram.com/angelgiogu" // replace with your handle
+              href="https://www.instagram.com/angelgioguajardo" // replace with your handle
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted hover:text-ink transition-colors underline underline-offset-4"
             >
-              @angelgiogu {/* replace with your handle */}
+              @angelgioguajardo {/* replace with your handle */}
             </a>
           </div>
 
