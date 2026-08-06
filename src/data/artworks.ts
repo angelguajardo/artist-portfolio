@@ -37,7 +37,6 @@ export const artworks: Artwork[] = [
     image: "/images/dragon-in-the-mist.jpg",
     available: true,
     price: "$2,200",
-    featured: true,
   },
   {
     slug: "heron-rising",
@@ -50,7 +49,6 @@ export const artworks: Artwork[] = [
     image: "/images/heron-rising.jpg",
     available: true,
     price: "$1,600",
-    featured: true,
   },
   {
     slug: "ahri",
@@ -63,7 +61,6 @@ export const artworks: Artwork[] = [
     image: "/images/ahri.jpg",
     available: true,
     statusBadge: "Available at Worlds 2026",
-    featured: true,
   },
   {
     slug: "stone-coast",
@@ -76,6 +73,7 @@ export const artworks: Artwork[] = [
     image: "/images/unnamed (4).jpg",
     available: true,
     price: "$1,200",
+    featured: true,
   },
   {
     slug: "moon-prayer",
@@ -100,6 +98,7 @@ export const artworks: Artwork[] = [
     image: "/images/ekko.jpg",
     available: true,
     statusBadge: "Available at Worlds 2026",
+    featured: true,
   },
   {
     slug: "pond-with-butterfly",
@@ -245,6 +244,7 @@ export const artworks: Artwork[] = [
     image: "/images/carousel-study.jpg",
     available: true,
     price: "$1,100",
+    featured: true,
   },
   {
     slug: "still-water-i",
@@ -294,5 +294,14 @@ export const artworks: Artwork[] = [
   },
 ];
 
-// Artworks to show on the home page (featured: true), in order
-export const featuredArtworks = artworks.filter((a) => a.featured);
+// Artworks to show on the home page, in display order.
+// Slugs listed here appear first (in this order); any other `featured: true`
+// works follow in gallery order.
+const featuredOrder = ["ekko", "stone-coast", "carousel-study"];
+export const featuredArtworks = artworks
+  .filter((a) => a.featured)
+  .sort((a, b) => {
+    const ai = featuredOrder.indexOf(a.slug);
+    const bi = featuredOrder.indexOf(b.slug);
+    return (ai === -1 ? featuredOrder.length : ai) - (bi === -1 ? featuredOrder.length : bi);
+  });
