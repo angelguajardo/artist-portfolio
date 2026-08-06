@@ -44,6 +44,13 @@ export default function ArtworkCard({ artwork, priority = false }: Props) {
         {artwork.price && artwork.available && (
           <p className="label text-ink">{artwork.price}</p>
         )}
+        {artwork.statusBadge && artwork.available && (
+          <p>
+            <span className="label inline-block border border-border px-2 py-1 text-ink">
+              {artwork.statusBadge}
+            </span>
+          </p>
+        )}
       </div>
     </Link>
   );

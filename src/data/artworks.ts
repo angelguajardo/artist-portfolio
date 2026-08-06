@@ -6,6 +6,8 @@
 //   2. Copy one of the entries below and update the fields
 //   3. Set `available: false` and remove `price` once sold
 //   4. Set `purchaseUrl` if you're selling through an external platform
+//
+// Works are listed strongest-first; the gallery renders them in this order.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Artwork = {
@@ -20,46 +22,108 @@ export type Artwork = {
   price?: string;         // e.g. "$2,400" — omit if not displaying price
   purchaseUrl?: string;   // link to external shop (Artsy, Saatchi, etc.)
   featured?: boolean;     // show on home page
+  statusBadge?: string;   // shown as a badge instead of price, e.g. "Available at Worlds 2026"
 };
 
 export const artworks: Artwork[] = [
   {
-    slug: "still-water-i",
-    title: "Still Water I",
+    slug: "dragon-in-the-mist",
+    title: "Dragon in the Mist",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "12 × 16 in",
     description:
-      "Painted over three sessions across a single week with a blue-pink palette",
-    image: "/images/unnamed.jpg",
+      "A small blue-haired figure stands at the edge of a cliff, staff in hand, facing a dragon that is mostly cloud. Grey washes layered until the mist felt like weather.",
+    image: "/images/dragon-in-the-mist.jpg",
     available: true,
-    price: "$3,200",
+    price: "$2,200",
     featured: true,
   },
   {
-    slug: "interior-november",
-    title: "Interior, November",
+    slug: "heron-rising",
+    title: "Heron Rising",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "9 × 12 in",
     description:
-      "Late afternoon light across my dog. The particular quality of November sun low and amber has interested me for years. This is the third attempt at capturing it honestly.",
-    image: "/images/unnamed (2).jpg",
+      "A great blue heron caught mid-dance, one foot barely touching the water. The ripples came last — quick concentric strokes while the paper was still damp.",
+    image: "/images/heron-rising.jpg",
+    available: true,
+    price: "$1,600",
+    featured: true,
+  },
+  {
+    slug: "ahri",
+    title: "Ahri",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "The nine-tailed fox mid-glance, a charm burning pink at her shoulder, dark hair pooling into ink. This piece will be available for purchase in person at the League of Legends 2026 World Championship Grand Final on Saturday, November 14, 2026, at the Barclays Center in Brooklyn, New York.",
+    image: "/images/ahri.jpg",
+    available: true,
+    statusBadge: "Available at Worlds 2026",
+    featured: true,
+  },
+  {
+    slug: "stone-coast",
+    title: "Stone Coast",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "Painted on location in one session. The tide was coming in. I was working faster than usual, the sunset lasts less than an hour in October.",
+    image: "/images/unnamed (4).jpg",
+    available: true,
+    price: "$1,200",
+  },
+  {
+    slug: "moon-prayer",
+    title: "Moon Prayer",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "A figure with folded hands, haloed in white against a full moon and a sea of crimson. The most saturated palette I've allowed myself in a long time.",
+    image: "/images/moon-prayer.jpg",
+    available: true,
+    price: "$1,900",
+  },
+  {
+    slug: "ekko",
+    title: "Ekko",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "The boy who shattered time, standing still for once — arms crossed, white dreads lit against a wall of green. This piece will be available for purchase in person at the League of Legends 2026 World Championship Grand Final on Saturday, November 14, 2026, at the Barclays Center in Brooklyn, New York.",
+    image: "/images/ekko.jpg",
+    available: true,
+    statusBadge: "Available at Worlds 2026",
+  },
+  {
+    slug: "pond-with-butterfly",
+    title: "Pond with Butterfly",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "12 × 16 in",
+    description:
+      "Two fish circle beneath the surface while a blue butterfly skims the ripples between them. Greens on greens — the pond from above, all reflection and depth at once.",
+    image: "/images/pond-with-butterfly.jpg",
     available: true,
     price: "$1,800",
-    featured: true,
   },
   {
-    slug: "field-study-grey",
-    title: "Field Study (Grey)",
+    slug: "lilac-braids",
+    title: "Lilac Braids",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "9 × 12 in",
     description:
-      "One of a series of small field paintings made in a single afternoon. The grass had just been cut. The horizon was a single unbroken line. I was interested in doing as little as possible.",
-    image: "/images/unnamed (3).jpg",
-    available: false,
-    featured: true,
+      "A portrait built almost entirely from one color family — lilac hair in heavy braids, magenta dress, a soft grey arch behind. The face is the only quiet place on the page.",
+    image: "/images/lilac-braids.jpg",
+    available: true,
+    price: "$1,700",
   },
   {
     slug: "figure-at-window",
@@ -75,28 +139,64 @@ export const artworks: Artwork[] = [
     purchaseUrl: "https://www.artsy.net", // replace with your actual listing
   },
   {
-    slug: "stone-coast",
-    title: "Stone Coast",
+    slug: "serpent-and-songbirds",
+    title: "Serpent and Songbirds",
     year: 2026,
     medium: "Watercolor on paper",
-    dimensions: "9 × 12 in",
+    dimensions: "12 × 16 in",
     description:
-      "Painted on location in one session. The tide was coming in. I was working faster than usual, the sunset lasts less than an hour in October.",
-    image: "/images/unnamed (4).jpg",
+      "A pale serpent coils through a scatter of ink spray while two bluebirds hover close — closer than they should. Painted wet-into-wet in a single sitting.",
+    image: "/images/serpent-and-songbirds.jpg",
     available: true,
-    price: "$1,200",
+    price: "$1,700",
   },
   {
-    slug: "heron-rising",
-    title: "Heron Rising",
+    slug: "adrift",
+    title: "Adrift",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "9 × 12 in",
     description:
-      "A great blue heron caught mid-dance, one foot barely touching the water. The ripples came last — quick concentric strokes while the paper was still damp.",
-    image: "/images/heron-rising.jpg",
+      "An astronaut drifting through a violet nebula, one arm reaching for nothing in particular. Salt was dropped into the wet wash to make the stars.",
+    image: "/images/adrift.jpg",
     available: true,
     price: "$1,600",
+  },
+  {
+    slug: "lotus-bowl",
+    title: "Lotus Bowl",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "A girl looks up from behind a painted bowl, a sunset pond dissolving into pattern behind her. Everything in this one wants to be ornament, including the light.",
+    image: "/images/lotus-bowl.jpg",
+    available: true,
+    price: "$1,500",
+  },
+  {
+    slug: "genesis",
+    title: "Genesis",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "An open hand, a red helix, a crescent of blood-colored moon — origins layered over one another until they blur. The densest composition in this series.",
+    image: "/images/genesis.jpg",
+    available: true,
+    price: "$2,000",
+  },
+  {
+    slug: "girl-with-a-rose",
+    title: "Girl with a Rose",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "A quiet figure wrapped in a green veil, eyes closed, a single red rose in her hair. Most of the sheet is left empty on purpose — the stillness is the subject.",
+    image: "/images/girl-with-a-rose.jpg",
+    available: true,
+    price: "$1,300",
   },
   {
     slug: "harbor-at-dusk",
@@ -123,40 +223,16 @@ export const artworks: Artwork[] = [
     price: "$1,500",
   },
   {
-    slug: "girl-with-a-rose",
-    title: "Girl with a Rose",
+    slug: "night-garden",
+    title: "Night Garden",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "9 × 12 in",
     description:
-      "A quiet figure wrapped in a green veil, eyes closed, a single red rose in her hair. Most of the sheet is left empty on purpose — the stillness is the subject.",
-    image: "/images/girl-with-a-rose.jpg",
+      "A pale figure in a rose-colored dress under a crescent moon, flanked by shapes that might be flowers or might be hands. Painted from a dream, finished before it faded.",
+    image: "/images/night-garden.jpg",
     available: true,
-    price: "$1,300",
-  },
-  {
-    slug: "serpent-and-songbirds",
-    title: "Serpent and Songbirds",
-    year: 2026,
-    medium: "Watercolor on paper",
-    dimensions: "12 × 16 in",
-    description:
-      "A pale serpent coils through a scatter of ink spray while two bluebirds hover close — closer than they should. Painted wet-into-wet in a single sitting.",
-    image: "/images/serpent-and-songbirds.jpg",
-    available: true,
-    price: "$1,700",
-  },
-  {
-    slug: "moon-prayer",
-    title: "Moon Prayer",
-    year: 2026,
-    medium: "Watercolor on paper",
-    dimensions: "9 × 12 in",
-    description:
-      "A figure with folded hands, haloed in white against a full moon and a sea of crimson. The most saturated palette I've allowed myself in a long time.",
-    image: "/images/moon-prayer.jpg",
-    available: true,
-    price: "$1,900",
+    price: "$1,400",
   },
   {
     slug: "carousel-study",
@@ -171,88 +247,39 @@ export const artworks: Artwork[] = [
     price: "$1,100",
   },
   {
-    slug: "dragon-in-the-mist",
-    title: "Dragon in the Mist",
+    slug: "still-water-i",
+    title: "Still Water I",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "12 × 16 in",
     description:
-      "A small blue-haired figure stands at the edge of a cliff, staff in hand, facing a dragon that is mostly cloud. Grey washes layered until the mist felt like weather.",
-    image: "/images/dragon-in-the-mist.jpg",
+      "Painted over three sessions across a single week with a blue-pink palette",
+    image: "/images/unnamed.jpg",
     available: true,
-    price: "$2,200",
+    price: "$3,200",
   },
   {
-    slug: "pond-with-butterfly",
-    title: "Pond with Butterfly",
+    slug: "interior-november",
+    title: "Interior, November",
     year: 2026,
     medium: "Watercolor on paper",
-    dimensions: "12 × 16 in",
+    dimensions: "9 × 12 in",
     description:
-      "Two fish circle beneath the surface while a blue butterfly skims the ripples between them. Greens on greens — the pond from above, all reflection and depth at once.",
-    image: "/images/pond-with-butterfly.jpg",
+      "Late afternoon light across my dog. The particular quality of November sun low and amber has interested me for years. This is the third attempt at capturing it honestly.",
+    image: "/images/unnamed (2).jpg",
     available: true,
     price: "$1,800",
   },
   {
-    slug: "night-garden",
-    title: "Night Garden",
+    slug: "field-study-grey",
+    title: "Field Study (Grey)",
     year: 2026,
     medium: "Watercolor on paper",
     dimensions: "9 × 12 in",
     description:
-      "A pale figure in a rose-colored dress under a crescent moon, flanked by shapes that might be flowers or might be hands. Painted from a dream, finished before it faded.",
-    image: "/images/night-garden.jpg",
-    available: true,
-    price: "$1,400",
-  },
-  {
-    slug: "genesis",
-    title: "Genesis",
-    year: 2026,
-    medium: "Watercolor on paper",
-    dimensions: "9 × 12 in",
-    description:
-      "An open hand, a red helix, a crescent of blood-colored moon — origins layered over one another until they blur. The densest composition in this series.",
-    image: "/images/genesis.jpg",
-    available: true,
-    price: "$2,000",
-  },
-  {
-    slug: "adrift",
-    title: "Adrift",
-    year: 2026,
-    medium: "Watercolor on paper",
-    dimensions: "9 × 12 in",
-    description:
-      "An astronaut drifting through a violet nebula, one arm reaching for nothing in particular. Salt was dropped into the wet wash to make the stars.",
-    image: "/images/adrift.jpg",
-    available: true,
-    price: "$1,600",
-  },
-  {
-    slug: "lilac-braids",
-    title: "Lilac Braids",
-    year: 2026,
-    medium: "Watercolor on paper",
-    dimensions: "9 × 12 in",
-    description:
-      "A portrait built almost entirely from one color family — lilac hair in heavy braids, magenta dress, a soft grey arch behind. The face is the only quiet place on the page.",
-    image: "/images/lilac-braids.jpg",
-    available: true,
-    price: "$1,700",
-  },
-  {
-    slug: "lotus-bowl",
-    title: "Lotus Bowl",
-    year: 2026,
-    medium: "Watercolor on paper",
-    dimensions: "9 × 12 in",
-    description:
-      "A girl looks up from behind a painted bowl, a sunset pond dissolving into pattern behind her. Everything in this one wants to be ornament, including the light.",
-    image: "/images/lotus-bowl.jpg",
-    available: true,
-    price: "$1,500",
+      "One of a series of small field paintings made in a single afternoon. The grass had just been cut. The horizon was a single unbroken line. I was interested in doing as little as possible.",
+    image: "/images/unnamed (3).jpg",
+    available: false,
   },
   {
     slug: "two-vessels",

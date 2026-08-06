@@ -77,6 +77,16 @@ export default async function ArtworkDetailPage({ params }: Props) {
                 <dd className="text-sm">{artwork.price}</dd>
               </div>
             )}
+            {artwork.statusBadge && artwork.available && (
+              <div className="flex gap-8 items-center">
+                <dt className="label w-24 shrink-0">Sale</dt>
+                <dd>
+                  <span className="label inline-block border border-border px-2 py-1 text-ink">
+                    {artwork.statusBadge}
+                  </span>
+                </dd>
+              </div>
+            )}
           </dl>
 
           <p className="text-sm text-muted leading-relaxed mb-10 max-w-md">
