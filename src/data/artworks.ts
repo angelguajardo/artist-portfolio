@@ -27,6 +27,18 @@ export type Artwork = {
 
 export const artworks: Artwork[] = [
   {
+    slug: "jinx",
+    title: "Jinx",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "9 × 12 in",
+    description:
+      "The loose cannon glancing back over her shoulder, blue braids swinging, pink powder-burns blooming across the paper around her. This piece will be available for purchase in person at the League of Legends 2026 World Championship Grand Final on Saturday, November 14, 2026, at the Barclays Center in Brooklyn, New York.",
+    image: "/images/jinx.jpg",
+    available: true,
+    statusBadge: "Available at Worlds 2026",
+  },
+  {
     slug: "dragon-in-the-mist",
     title: "Dragon in the Mist",
     year: 2026,
