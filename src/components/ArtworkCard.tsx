@@ -31,16 +31,25 @@ export default function ArtworkCard({ artwork, priority = false }: Props) {
           </h3>
           <span
             className={`label mt-0.5 shrink-0 ${
-              artwork.available ? "text-muted" : "text-muted/50"
+              artwork.commission || artwork.available
+                ? "text-muted"
+                : "text-muted/50"
             }`}
           >
-            {artwork.available ? "Available" : "Sold"}
+            {artwork.commission
+              ? "Commission"
+              : artwork.available
+                ? "Available"
+                : "Sold"}
           </span>
         </div>
         <p className="label">
           {artwork.year} &nbsp;·&nbsp; {artwork.medium} &nbsp;·&nbsp;{" "}
           {artwork.dimensions}
         </p>
+        {artwork.commission && (
+          <p className="label text-ink">For {artwork.commission.client}</p>
+        )}
         {artwork.price && artwork.available && (
           <p className="label text-ink">{artwork.price}</p>
         )}

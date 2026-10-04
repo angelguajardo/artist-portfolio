@@ -23,6 +23,14 @@ export type Artwork = {
   purchaseUrl?: string;   // link to external shop (Artsy, Saatchi, etc.)
   featured?: boolean;     // show on home page
   statusBadge?: string;   // shown as a badge instead of price, e.g. "Available at Worlds 2026"
+
+  // Set for client/commissioned work. Commissions are listed in their own section,
+  // are never shown with a price or an Available/Sold status, and are excluded from
+  // the personal-work gallery.
+  commission?: {
+    client: string;       // e.g. "Hommali"
+    context: string;      // what it was made for, e.g. "Postcard artwork"
+  };
 };
 
 export const artworks: Artwork[] = [
@@ -293,6 +301,23 @@ export const artworks: Artwork[] = [
     image: "/images/unnamed (3).jpg",
     available: false,
   },
+  // ── Commissioned / client work ──────────────────────────────────────────────
+  {
+    slug: "with-love-buds",
+    title: "With Love Buds",
+    year: 2026,
+    medium: "Watercolor on paper",
+    dimensions: "12 × 9 in",
+    description:
+      "The dining room seen from above and to one side — a long communal table under a tall arrangement of orchids and curling greens, flanked by brass chairs, with green tile and gilded panels behind. Painted for Hommali's postcards.",
+    image: "/images/with-love-buds.jpg",
+    available: false,
+    commission: {
+      client: "Hommali",
+      context: "Original artwork for the client's postcards",
+    },
+  },
+
   {
     slug: "two-vessels",
     title: "Two Vessels",
@@ -305,6 +330,12 @@ export const artworks: Artwork[] = [
     available: false,
   },
 ];
+
+// Personal work (everything that is not a commission), in gallery order.
+export const personalWorks = artworks.filter((a) => !a.commission);
+
+// Client / commissioned work, listed in its own section.
+export const commissionedWorks = artworks.filter((a) => a.commission);
 
 // Artworks to show on the home page, in display order.
 // Slugs listed here appear first (in this order); any other `featured: true`

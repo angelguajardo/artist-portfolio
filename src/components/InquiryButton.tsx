@@ -4,12 +4,14 @@ type Props = {
   artworkTitle?: string;
   variant?: "outline" | "solid";
   className?: string;
+  label?: string;
 };
 
 export default function InquiryButton({
   artworkTitle,
   variant = "outline",
   className = "",
+  label = "Inquire",
 }: Props) {
   const subject = artworkTitle
     ? `Inquiry: ${artworkTitle}`
@@ -27,7 +29,7 @@ export default function InquiryButton({
 
   return (
     <Link href={href} className={`${styles} ${className}`}>
-      Inquire
+      {label}
     </Link>
   );
 }

@@ -68,9 +68,25 @@ export default async function ArtworkDetailPage({ params }: Props) {
             <div className="flex gap-8">
               <dt className="label w-24 shrink-0">Status</dt>
               <dd className="text-sm">
-                {artwork.available ? "Available" : "In a private collection"}
+                {artwork.commission
+                  ? "Commissioned work"
+                  : artwork.available
+                    ? "Available"
+                    : "In a private collection"}
               </dd>
             </div>
+            {artwork.commission && (
+              <>
+                <div className="flex gap-8">
+                  <dt className="label w-24 shrink-0">Client</dt>
+                  <dd className="text-sm">{artwork.commission.client}</dd>
+                </div>
+                <div className="flex gap-8">
+                  <dt className="label w-24 shrink-0">Made for</dt>
+                  <dd className="text-sm">{artwork.commission.context}</dd>
+                </div>
+              </>
+            )}
             {artwork.price && artwork.available && (
               <div className="flex gap-8">
                 <dt className="label w-24 shrink-0">Price</dt>
@@ -92,6 +108,16 @@ export default async function ArtworkDetailPage({ params }: Props) {
           <p className="text-sm text-muted leading-relaxed mb-10 max-w-md">
             {artwork.description}
           </p>
+
+          {artwork.commission && (
+            <div className="flex flex-wrap gap-4">
+              <InquiryButton
+                artworkTitle="Commission"
+                label="Inquire about a commission"
+                variant="solid"
+              />
+            </div>
+          )}
 
           {artwork.available && (
             <div className="flex flex-wrap gap-4">
